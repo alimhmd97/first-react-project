@@ -4,7 +4,6 @@ const Shop = () => {
     const [products, setProducts] = useState(null);
     useEffect(() => {
         fetchProducts();
-        // eslint-disable-next-line
     }, []);
 
     const fetchProducts = async () => {
