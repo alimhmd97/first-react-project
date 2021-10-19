@@ -6,7 +6,8 @@ const Product = ({ match }) => {
     const [product, setproduct] = useState(null);
     useEffect(() => {
         getProduct();
-    });
+        // eslint-disable-next-line
+    }, []);
 
     const getProduct = () => {
         fetch(`https://fakestoreapi.com/products/${match.params.id}`)
@@ -15,27 +16,7 @@ const Product = ({ match }) => {
                 setproduct(json);
             });
     };
-    // const getProduct = () => {
-    //     let isMounted = true;
-    //     fetch(`https://fakestoreapi.com/products/${match.params.id}`)
-    //         .then((res) => res.json())
-    //         .then((json) => {
-    //             if (isMounted) setproduct(json);
-    //         });
-    //     return () => {
-    //         isMounted = false;
-    //     };
-    // };
-    // useEffect(() => {
-    //     getProduct();
-    // });
-    // useEffect(() => {
-    //   let isMounted = true;               // note mutable flag
-    //   someAsyncOperation().then(data => {
-    //     if (isMounted) setState(data);    // add conditional check
-    //   })
-    //   return () => { isMounted = false }; // cleanup toggles value, if unmounted
-    // }, []);
+
     return (
         <div>
             {!product ? (

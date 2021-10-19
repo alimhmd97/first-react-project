@@ -4,32 +4,14 @@ const Shop = () => {
     const [products, setProducts] = useState(null);
     useEffect(() => {
         fetchProducts();
-    });
+        // eslint-disable-next-line
+    }, []);
 
     const fetchProducts = async () => {
         fetch("https://fakestoreapi.com/products")
             .then((res) => res.json())
             .then((json) => setProducts(json));
     };
-    // index.js:1
-
-    //    Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
-    // at Product (http://localhost:3000/static/js/main.chunk.js:905:3)
-    // كنت بحاول اشوف حل للايرور دا
-    // const getProducts = () => {
-    //     let isMounted = true;
-    //     fetch("https://fakestoreapi.com/products")
-    //         .then((res) => res.json())
-    //         .then((json) => {
-    //             if (isMounted) setProducts(json);
-    //         });
-    //     return () => {
-    //         isMounted = false;
-    //     };
-    // };
-    // useEffect(() => {
-    //     getProducts();
-    // }, []);
 
     return (
         <div>
