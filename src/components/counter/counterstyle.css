@@ -11,8 +11,8 @@
 }
 .containeer {
     width: 500px;
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
     margin: 0 auto;
     margin-top: 20px;
     background-color: cadetblue;
@@ -22,11 +22,12 @@
     padding: 1px;
 }
 h1 {
-    font-size: 3rem
+    font-size: 3rem;
 }
 
 .button-43,
-.button-42 {  background-color: #4CAF50; /* Green */
+.button-42 {
+    background-color: #4caf50; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -35,6 +36,3 @@ h1 {
     display: inline-block;
     font-size: 16px;
 }
-
-
-
