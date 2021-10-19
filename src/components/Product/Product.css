@@ -1,0 +1,33 @@
+.product__img {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    top: 2rem;
+}
+img {
+    width: 100%;
+}
+.product__wrapper {
+    position: absolute;
+    bottom: 3rem;
+}
+body {
+    background-color: #6c757d;
+}
+.product {
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: cadetblue;
+    color: aliceblue;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 1px;
+}
