@@ -8,10 +8,11 @@ import Counter from "./components/counter/counter";
 import Shop from "./components/Shop/Shop";
 import Product from "./components/Product/Product";
 import Todo from "./view/todo";
-
-
+import LoginForm from "./Form/Form";
+import Register from "./components/register/register";
 import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 function App() {
     return (
       <Router>
@@ -25,6 +26,9 @@ function App() {
                     <Route component={Shop} path="/shop" exact />
                     <Route component={Product} path="/shop/:id" />
                     <Route component={Todo} path="/Todo" />
+                    <Route component={LoginForm} path="/LoginForm" />
+                    <Route component={Register} path="/Register" />
+
                 </Switch>
             <Footer />
             </div>

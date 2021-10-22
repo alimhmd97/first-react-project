@@ -42,6 +42,18 @@ export const NavbBar = () => {
                         >
                             Todo
                         </Link>
+                        <Link
+                            to="/LoginForm"
+                            className=" mx-5 nav-item nav-link NaVbar"
+                        >
+                            Login
+                        </Link>
+                        <Link
+                            to="/register"
+                            className=" mx-5 nav-item nav-link NaVbar"
+                        >
+                            register
+                        </Link>
                     </div>
                 </div>
             </nav>
