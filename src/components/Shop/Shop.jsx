@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
 const Shop = () => {
     const [products, setProducts] = useState(null);
     useEffect(() => {
@@ -16,14 +17,14 @@ const Shop = () => {
         <div>
             {products ? (
                 <>
-                    <h1 className=" text-light m-5">Shop</h1>
+                    <h1 className="  m-5">Shop</h1>
                     <div className="d-flex flex-wrap container ">
                         {products.map((product) => {
                             return (
                                 <Link
                                     to={`/Shop/${product.id}`}
                                     key={product.id}
-                                    className=" my-4 containeer text-decoration-none d-flex flex-wrap"
+                                    className=" my-4 containeer flex-column text-decoration-none d-flex flex-wrap bg-light"
                                 >
                                     <figure className="">
                                         <img
@@ -34,8 +35,8 @@ const Shop = () => {
                                     </figure>
                                     <h4>{product.title}</h4>{" "}
                                     <p>{product.description}</p>
-                                    <p className=" mx-5">
-                                        {product.rating.rate}
+                                    <p className=" mx-5 fs-3">
+                                        rate : {product.rating.rate}
                                     </p>
                                     <p className="fs-2 fw-bold mx-5">
                                         price : {product.price}

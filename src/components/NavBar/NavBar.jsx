@@ -3,36 +3,44 @@ import { Link } from "react-router-dom";
 
 export const NavbBar = () => {
     return (
-        <div className="d-flex justify-content-between">
-            {/* <a className="navbar-brand text-light fs-2">Navbar</a> */}
-            <nav className="navbar navbar-expand-lg navbar-light bg-light ">
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+        <div className="d-flex justify-content-between ">
+            <nav className="navbar navbar-expand-lg navbar-light navbar navbar-dark bg-dark ">
                 <div
                     className="collapse navbar-collapse"
                     id="navbarNavAltMarkup"
                 >
-                    <div className="navbar-nav">
+                    {" "}
+                    <p className="navbar-brand px-3 fw-bold ">
+                        React.Portfolio
+                    </p>
+                </div>
+            </nav>
+            <nav className="navbar navbar-expand-lg navbar-light navbar navbar-dark bg-dark ">
+                <div
+                    className="collapse navbar-collapse"
+                    id="navbarNavAltMarkup"
+                >
+                    <div className="navbar-nav NaV">
                         <Link
                             to="/counter"
-                            className="nav-item nav-link active mx-5"
+                            className="nav-item nav-link active mx-5 NaVbar"
                         >
                             counter
                         </Link>
-                        <Link to="/" className=" mx-5 nav-item nav-link">
+                        <Link to="/" className=" mx-5 nav-item nav-link NaVbar">
                             Home
                         </Link>
-                        <Link to="/Shop" className=" mx-5 nav-item nav-link">
+                        <Link
+                            to="/Shop"
+                            className=" mx-5 nav-item nav-link NaVbar"
+                        >
                             Shop
+                        </Link>
+                        <Link
+                            to="/Todo"
+                            className=" mx-5 nav-item nav-link NaVbar"
+                        >
+                            Todo
                         </Link>
                     </div>
                 </div>

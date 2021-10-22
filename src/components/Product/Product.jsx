@@ -6,8 +6,7 @@ const Product = ({ match }) => {
     const [product, setproduct] = useState(null);
     useEffect(() => {
         getProduct();
-        // eslint-disable-next-line
-    }, []);
+    });
 
     const getProduct = () => {
         fetch(`https://fakestoreapi.com/products/${match.params.id}`)
