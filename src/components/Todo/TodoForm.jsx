@@ -18,7 +18,8 @@ const TodoForm = ({ addTodo }) => {
             <form onSubmit={handleSubmission}>
                 Title <br />
                 <input
-                    className="w-50"
+
+                    className="form-control m-auto w-50"
                     type="text"
                     name="title"
                     value={title}
@@ -27,7 +28,7 @@ const TodoForm = ({ addTodo }) => {
                 <br />
                 Content <br />
                 <textarea
-                    className="w-50"
+                    className="form-control w-50 m-auto"
                     name="content"
                     value={content}
                     onChange={(e) => setContent(e.target.value)}

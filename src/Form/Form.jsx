@@ -2,9 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import "./login.css";
-/**
- * LoginForm Component
- */
+
 const LoginForm = () => {
     const initialValues = {
         email: "",
@@ -76,28 +74,3 @@ const LoginForm = () => {
     );
 };
 export default LoginForm;
-// Formik & Yup Lab
-
-// Create a login form using useFormik hook containing
-
-// Email // required
-
-// Password // required
-
-// Remember me // optional
-
-// Create a registration form using Formik components containing
-
-// username: "", // required
-
-//  email: "", // email, required
-
-//  password: "", // required
-
-//  confirmPassword: "",  // must match password
-
-//  active: false, // required
-
-//  gender: "",  // required (drop down)
-
-//   hoppies: [""], // (field array)
