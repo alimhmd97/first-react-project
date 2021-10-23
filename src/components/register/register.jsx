@@ -152,7 +152,7 @@ const Register = () => {
                                                     style={{ display: "block" }}
                                                     className="form-label"
                                                 >
-                                                    remember me
+                                                    active
                                                 </label>
                                                 <input
 
