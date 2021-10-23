@@ -28,6 +28,7 @@ const TodoList = ({ todos, deleteTodo }) => {
                 );
             })
         ) : (
+
             <p className="h5 mx-5 text-muted">no items on the list ..</p>
         );
 

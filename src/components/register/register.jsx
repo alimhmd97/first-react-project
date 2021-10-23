@@ -25,6 +25,7 @@ const Register = () => {
         Repassword: "",
         rememberMe: false,
         hobbies: [""],
+        gender: ""
     };
 
     const onSubmit = (values) => console.log(JSON.stringify(values, null, 4));
@@ -119,7 +120,29 @@ const Register = () => {
                                         );
                                     }}
                                 </Field>
-
+                                <Field name="gender">
+                                    {(formikField) => {
+                                        return (
+                                            <>
+                                                <label htmlFor="gender" style={{ display: "block" }}>
+                                                    Gender
+                                                </label>
+                                                <select id="gender" {...formikField.field}>
+                                                    <option value="" label="Choose your gender" />
+                                                    <option value="male" label="Male" />
+                                                    <option value="female" label="Female" />
+                                                </select>
+                                                <ErrorMessage name="gender">
+                                                    {(errMessage) => {
+                                                        return (
+                                                            <div style={{ color: "red" }}>{errMessage}</div>
+                                                        );
+                                                    }}
+                                                </ErrorMessage>
+                                            </>
+                                        );
+                                    }}
+                                </Field>
                                 <Field name="rememberMe">
                                     {(formikField) => {
                                         return (
