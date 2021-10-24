@@ -108,7 +108,7 @@ const Register = () => {
                                                 >
                                                     Gender
                                                 </label>
-                                                <select className="form-select w-50 text-center"
+                                                <select className="form-select w-50 text-center m-auto"
                                                     id="gender"
                                                     {...formikField.field}
                                                 >
@@ -167,7 +167,7 @@ const Register = () => {
                                     }}
                                 </Field>
 
-                                <Field name="hobbies">
+                                <Field name="hobbies" >
                                     {(formikField) => {
                                         return (
                                             <>

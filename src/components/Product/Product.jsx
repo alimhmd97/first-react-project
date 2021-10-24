@@ -5,6 +5,7 @@ import "./Product.css";
 const Product = ({ match }) => {
     const [product, setproduct] = useState(null);
     useEffect(() => {
+
         getProduct();
     });
 
