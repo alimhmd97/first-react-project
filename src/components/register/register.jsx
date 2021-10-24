@@ -4,6 +4,9 @@ import * as yup from "yup";
 import FormikField from "../shared/FormikField";
 
 const validationSchema = yup.object({
+    name: yup
+        .string()
+        .required("name field is required"),
     email: yup
         .string()
         .email("Please enter a valid email address")
@@ -23,16 +26,17 @@ const Register = () => {
         email: "",
         password: "",
         Repassword: "",
-        rememberMe: false,
+        active: false,
         hobbies: [""],
-        gender: ""
+        gender: "",
     };
 
-    const onSubmit = (values) => console.log(JSON.stringify(values, null, 4));
+    const onSubmit = (values) => {
+        alert(`mail is  ${values.email} and password is ${values.password} and gender is ${values.gender} and hobbies  ${values.hobbies}`);
+    };
 
     return (
         <>
-
             <Formik
                 initialValues={initialValues}
                 onSubmit={onSubmit}
@@ -41,42 +45,15 @@ const Register = () => {
                 {(formik) => {
                     return (
                         <Form>
-                            <div className="form w-50 m-auto" style={{ padding: 20 }}>
-
-                                <Field name="name">
-                                    {(formikField) => {
-                                        return (
-                                            <>
-                                                <label
-                                                    htmlFor="email"
-                                                    style={{ display: "block" }}
-                                                    className="form-label"
-                                                >
-                                                    name
-                                                </label>
-                                                <input
-                                                    className="form-control"
-                                                    type="text"
-                                                    id="name"
-                                                    {...formikField.field}
-                                                />
-                                                <ErrorMessage name="email">
-                                                    {(errMessage) => {
-                                                        return (
-                                                            <div
-                                                                style={{
-                                                                    color: "gold",
-                                                                }}
-                                                            >
-                                                                {errMessage}
-                                                            </div>
-                                                        );
-                                                    }}
-                                                </ErrorMessage>
-                                            </>
-                                        );
-                                    }}
-                                </Field>
+                            <div
+                                className="form w-50 m-auto"
+                                style={{ padding: 20 }}
+                            >
+                                <FormikField
+                                    label="name:"
+                                    name="name"
+                                    type="text"
+                                />
                                 <FormikField
                                     label="email"
                                     name="email"
@@ -111,7 +88,8 @@ const Register = () => {
                                                                 style={{
                                                                     color: "gold",
                                                                 }}
-                                                            >{errMessage}
+                                                            >
+                                                                {errMessage}
                                                             </div>
                                                         );
                                                     }}
@@ -124,18 +102,40 @@ const Register = () => {
                                     {(formikField) => {
                                         return (
                                             <>
-                                                <label htmlFor="gender" style={{ display: "block" }}>
+                                                <label
+                                                    htmlFor="gender"
+                                                    style={{ display: "block" }}
+                                                >
                                                     Gender
                                                 </label>
-                                                <select id="gender" {...formikField.field}>
-                                                    <option value="" label="Choose your gender" />
-                                                    <option value="male" label="Male" />
-                                                    <option value="female" label="Female" />
+                                                <select className="form-select w-50 text-center"
+                                                    id="gender"
+                                                    {...formikField.field}
+                                                >
+                                                    <option
+
+                                                        value=""
+                                                        label="Choose your gender"
+                                                    />
+                                                    <option
+                                                        value="male"
+                                                        label="Male"
+                                                    />
+                                                    <option
+                                                        value="female"
+                                                        label="Female"
+                                                    />
                                                 </select>
                                                 <ErrorMessage name="gender">
                                                     {(errMessage) => {
                                                         return (
-                                                            <div style={{ color: "red" }}>{errMessage}</div>
+                                                            <div
+                                                                style={{
+                                                                    color: "red",
+                                                                }}
+                                                            >
+                                                                {errMessage}
+                                                            </div>
                                                         );
                                                     }}
                                                 </ErrorMessage>
@@ -143,7 +143,7 @@ const Register = () => {
                                         );
                                     }}
                                 </Field>
-                                <Field name="rememberMe">
+                                <Field name="active">
                                     {(formikField) => {
                                         return (
                                             <>
@@ -155,7 +155,6 @@ const Register = () => {
                                                     active
                                                 </label>
                                                 <input
-
                                                     type="checkbox"
                                                     id="rememberMe"
                                                     defaultChecked={
@@ -174,7 +173,6 @@ const Register = () => {
                                             <>
                                                 <div className="">
                                                     <label
-
                                                         htmlFor="hobby"
                                                         className="form-label  "
                                                         style={{
@@ -208,22 +206,22 @@ const Register = () => {
                                                                                 <Field
                                                                                     name={`hobbies[${i}]`}
                                                                                 />
+                                                                                {i === 0 &&
 
-                                                                                <button
-                                                                                    className="btn btn-primary"
-                                                                                    type="button"
-                                                                                    onClick={() =>
-                                                                                        push(
-                                                                                            ""
-                                                                                        )
-                                                                                    }
-                                                                                >
-                                                                                    +
-                                                                                </button>
+                                                                                    <button
+                                                                                        className="btn btn-primary btn-sm mb-1"
+                                                                                        type="button"
+                                                                                        onClick={() => {
+                                                                                            push(``)
+                                                                                        }}>
+                                                                                        +
+                                                                                    </button>
+                                                                                }
+
                                                                                 {i >
                                                                                     0 && (
                                                                                         <button
-                                                                                            className="btn btn-danger"
+                                                                                            className="btn btn-danger  btn-sm mb-1"
                                                                                             type="button"
                                                                                             onClick={() =>
                                                                                                 remove(
@@ -246,8 +244,11 @@ const Register = () => {
                                         );
                                     }}
                                 </Field>
-                                <button style={{ display: "block" }}
-                                    className="btn btn-primary m-auto mt-3">
+                                <button
+                                    style={{ display: "block" }}
+                                    type="submit"
+                                    className="btn btn-primary m-auto mt-3"
+                                >
                                     submit
                                 </button>
                             </div>

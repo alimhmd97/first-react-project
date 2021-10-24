@@ -6,12 +6,17 @@ const TodoForm = ({ addTodo }) => {
 
     const handleSubmission = (e) => {
         e.preventDefault();
-        addTodo({ title, content });
-        setTitle("");
-        setContent("");
+        if (title && content) {
+            addTodo({ title, content });
+            setTitle("");
+            setContent("");
+        } else {
+            alert("there is an empty required feild")
+        }
     };
 
     return (
+
         <div>
             <h3 className="text-muted mb-4">Add a TODO</h3>
 

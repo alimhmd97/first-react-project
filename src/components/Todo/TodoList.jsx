@@ -2,6 +2,7 @@ const TodoList = ({ todos, deleteTodo }) => {
     const todosList =
         todos && todos.length > 0 ? (
             todos.map((todo, i) => {
+
                 return (
                     <ul
                         key={i}
@@ -20,7 +21,7 @@ const TodoList = ({ todos, deleteTodo }) => {
                                     type="submit"
                                     onClick={() => deleteTodo(i)}
                                 >
-                                    del
+                                    remove
                                 </button>
                             </div>
                         </li>

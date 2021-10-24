@@ -9,7 +9,12 @@ const LoginForm = () => {
         password: "",
         rememberMe: false,
     };
-    const onSubmit = (values) => console.log(JSON.stringify(values, null, 4));
+    const onSubmit = (values) => {
+
+        alert(`email is ${formik.values.email}  and the password is   ${formik.values.password}`)
+
+
+    };
     const validationSchema = yup.object({
         email: yup
             .string()
@@ -67,7 +72,7 @@ const LoginForm = () => {
                     defaultChecked={formik.values.rememberMe}
                 />
                 <br />
-                <button className="btn btn-primary">submit</button>
+                <button type="submit" className="btn btn-primary">submit</button>
             </div>
             {/* <pre>{JSON.stringify(formik, null, 4)}</pre> */}
         </form>

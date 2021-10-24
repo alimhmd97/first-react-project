@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { store } from "./components/redux/Todo";
-
+// import "../node_modules/@fortawesome/fontawesome-free/css/all.css"
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store} >

@@ -11,6 +11,7 @@ const FormikField = ({ name, type, label }) => {
                         <label htmlFor={name} style={{ display: "block" }}>
                             {label}
                         </label>
+
                         <input
                             className="form-control"
                             type={type}

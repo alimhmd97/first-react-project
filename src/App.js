@@ -13,11 +13,13 @@ import Register from "./components/register/register";
 import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+
 function App() {
     return (
       <Router>
       
-                <NavbBar />
+        <NavbBar />
+
               <div className="App bg-secondary">
                 
                 <Switch>
